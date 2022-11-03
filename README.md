@@ -1,4 +1,4 @@
-# recommendationSystem
+# RecommendationSystem
 This is for Fall2022:Frontier of Cross-media Recommendation System(3131101531)–Project 
 It contains three part:
 Data pre-processing
