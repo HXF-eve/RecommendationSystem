@@ -3,6 +3,7 @@ import pandas as pd
 import gzip
 import json
 import random
+import plotly.express as px
 
 def parse(path):
   g = gzip.open(path, 'rb')
@@ -51,6 +52,23 @@ def splitdataset_random(df):
         pickle.dump(test, f, pickle.HIGHEST_PROTOCOL)
 
 
+def data_visualization(df, train, test):
+
+    # draw "Distribution chart of training data"
+    train_df=pd.DataFrame(train,columns=["user","item","rating"])
+    for template in ["plotly"]:
+        fig = px.scatter(train_df,
+                         x="user", y="item", color="rating",
+                         template=template, title="How about training set?")
+        fig.show()
+
+    # draw "Distribution chart of testing data"
+    test_df=pd.DataFrame(test,columns=["user","item","rating"])
+    for template in ["plotly"]:
+        fig = px.scatter(test_df,
+                         x="user", y="item", color="rating",
+                         template=template, title="How about testing set?")
+        fig.show()
 
 if __name__ == '__main__':
     reviews_df = getDF('data/reviews_Musical_Instruments_5.json.gz')
@@ -67,3 +85,4 @@ if __name__ == '__main__':
     with open('data/reviews5-1.pkl', 'wb') as f:
         pickle.dump(reviews_df, f, pickle.HIGHEST_PROTOCOL)
     splitdataset_random(reviews_df)
+    data_visualization(reviews_df, train, test)
