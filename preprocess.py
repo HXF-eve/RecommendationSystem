@@ -50,7 +50,7 @@ def splitdataset_random(df):
     with open('data/reviews5-2.pkl', 'wb') as f:
         pickle.dump(train, f, pickle.HIGHEST_PROTOCOL)
         pickle.dump(test, f, pickle.HIGHEST_PROTOCOL)
-
+    return train,test
 
 def data_visualization(df, train, test):
 
@@ -70,6 +70,7 @@ def data_visualization(df, train, test):
                          template=template, title="How about testing set?")
         fig.show()
 
+
 if __name__ == '__main__':
     reviews_df = getDF('data/reviews_Musical_Instruments_5.json.gz')
     reviews_df = reviews_df[['reviewerID', 'asin', 'overall']]
@@ -84,5 +85,5 @@ if __name__ == '__main__':
     print("The number of the total ratings is: ", len(reviews_df))
     with open('data/reviews5-1.pkl', 'wb') as f:
         pickle.dump(reviews_df, f, pickle.HIGHEST_PROTOCOL)
-    splitdataset_random(reviews_df)
+    train,test=splitdataset_random(reviews_df)
     data_visualization(reviews_df, train, test)
