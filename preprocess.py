@@ -59,7 +59,7 @@ def data_visualization(df, train, test):
     for template in ["plotly"]:
         fig = px.scatter(train_df,
                          x="user", y="item", color="rating",
-                         template=template, title="How about training set?")
+                         template=template, title="Distribution of training set.")
         fig.show()
 
     # draw "Distribution chart of testing data"
@@ -67,7 +67,7 @@ def data_visualization(df, train, test):
     for template in ["plotly"]:
         fig = px.scatter(test_df,
                          x="user", y="item", color="rating",
-                         template=template, title="How about testing set?")
+                         template=template, title="Distribution of testing set.")
         fig.show()
 
 
