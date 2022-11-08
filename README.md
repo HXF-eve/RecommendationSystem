@@ -23,4 +23,4 @@ We provide several methods for rating prediction:
 (2).Matrix Factorization, which used SVD algorithms.
 (3).SlopOne, a simple but with high-accruracy method
 (4).Coclustering.
-We evaluate these algorithms by calculating the MAE and RMSE.
+These algorithms are evaluated by calculating the MAE and RMSE.
