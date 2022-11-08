@@ -3,7 +3,7 @@ This is for Fall2022:Frontier of Cross-media Recommendation System(3131101531)â€
 
 It contains three parts:
 
-1.Data pre-processing
+1.Raw data pre-processing
 
 2.Rating prediction and error calculation
 
