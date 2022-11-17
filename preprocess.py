@@ -18,7 +18,7 @@ def getDF(path):
     i += 1
   return pd.DataFrame.from_dict(df, orient='index')
 
-
+#This is a new version of the project
 #check for the missing value
 def check_null_data(df):
     print(df.isnull().sum())
